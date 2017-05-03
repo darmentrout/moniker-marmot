@@ -7,7 +7,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Get Movie Title</title>
+	<title>MM0</title>
 	<style>
 		body {
 			font-family: sans-serif;
@@ -64,14 +64,18 @@ if( isset($get['animal']) ){
 
 		$query = "SELECT epithet, animal 
 				  FROM names 
-				  WHERE animal = ? COLLATE NOCASE";
+				  WHERE animal LIKE '%' || ? || '%' ";
 		$things = $db->prepare( $query );
 		$things->bindParam( 1, $get['animal'] );
 		$things->execute();
 		$results = $things->fetchAll(PDO::FETCH_ASSOC);
-		if( !empty($results[0]) ){
-			echo "<div id='result'><i>" . $results[0]['epithet'] . "</i> ";
-			echo "<span>" . $results[0]['animal'] . "</span></div>";
+		$i = 0;
+		if( !empty($results) ){
+			foreach( $results as $result ){
+				echo "<div id='result'><i>" . $results[$i]['epithet'] . "</i> ";
+				echo "<span>" . $results[$i]['animal'] . "</span></div>";
+				$i++;
+			}
 		}
 		else {
 			echo "<p>No matches.</p>";
