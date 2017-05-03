@@ -24,7 +24,7 @@
 			padding: 1px;
 		}
 		form {
-			margin: 0px;
+			margin: 20px 0px;
 			padding: 1px;
 		}
 		form * {
@@ -89,13 +89,60 @@ if( isset($get['animal']) ){
 
 }
 
+if( isset($get['find_match']) ){
+
+	try {
+
+		$places = intval( $_GET['find_match_places'] );
+		$fmatch = substr( $get['find_match'], 0, $places );
+
+		$query = "SELECT animal 
+		  FROM names 
+		  WHERE animal LIKE ? || '%' ";
+		$things = $db->prepare( $query );
+		$things->bindParam( 1, $fmatch );
+		$things->execute();
+		$results = $things->fetchAll(PDO::FETCH_ASSOC);
+		$i = 0;
+		if( !empty($results) ){
+			foreach( $results as $result ){
+				echo "<div id='result'><i>" . $get['find_match'] . "</i> ";
+				echo "<b>" . $results[$i]['animal'] . "</b></div>";
+				$i++;
+			}
+		}
+		else {
+			echo "<p>No matches.</p>";
+		}
+	}
+	catch(Exception $e) {
+		echo "<b>No good:</b>";
+		echo $e;
+		exit;
+	}
+
+}
+
 else { 
 ?>
 
+<h1>Search</h1>
 
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="GET">
-	<label for="title">Animal:</label>
-	<input id="title" name="animal" type="text">
+	<label for="animal">See Animals:</label>
+	<input id="animal" name="animal" type="text">
+	<input id="submit" type="submit">
+</form>
+
+<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="GET">
+	<label for="find_match">Find Matching Animal for:</label>
+	<input id="find_match" name="find_match" type="text" value="fe">
+	<label for="find_match_places">Places from Start:</label>
+	<select id="find_match_places" name="find_match_places">
+		<option value="1" selected>One/option>
+		<option value="2">Two</option>
+		<option value="3">Three</option>
+	</select>
 	<input id="submit" type="submit">
 </form>
 
