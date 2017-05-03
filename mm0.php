@@ -146,7 +146,6 @@ else {
 	<input id="submit" type="submit">
 </form>
 
-
 <?php
 }
 ?>
