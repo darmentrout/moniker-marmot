@@ -116,7 +116,7 @@ if( isset($get['find_match']) ){
 		}
 	}
 	catch(Exception $e) {
-		echo "<b>No good:</b>";
+		echo "<b>No good:</b> ";
 		echo $e;
 		exit;
 	}
@@ -136,11 +136,11 @@ else {
 
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="GET">
 	<label for="find_match">Find Matching Animal for:</label>
-	<input id="find_match" name="find_match" type="text" value="fe">
+	<input id="find_match" name="find_match" type="text" value="feasible">
 	<label for="find_match_places">Places from Start:</label>
 	<select id="find_match_places" name="find_match_places">
-		<option value="1" selected>One/option>
-		<option value="2">Two</option>
+		<option value="1">One</option>
+		<option value="2" selected>Two</option>
 		<option value="3">Three</option>
 	</select>
 	<input id="submit" type="submit">
