@@ -1,4 +1,5 @@
 
+// get all animals or just the ones from the search
 $('#submit0').on('click keydown', function(e){
 	e.preventDefault();
 	$.get('mm1.php', $('#form0').serialize(), function(data){
@@ -10,6 +11,8 @@ $('#submit0').on('click keydown', function(e){
 	});
 });
 
+
+// match animals to the search term
 $('#submit1').on('click keydown', function(e){
 	e.preventDefault();
 	$.get('mm1.php', $('#form1').serialize(), function(data){
