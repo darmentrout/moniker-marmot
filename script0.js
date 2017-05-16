@@ -44,24 +44,3 @@ $('#submit1').on('click keydown', function(e){
 });
 
 
-
-
-// var srch = $('#animal').val();
-// undefined
-// srch.match(/ain/gi);
-// null
-// var reg = RegExp(srch);
-// undefined
-// reg
-// /mo/
-// var reg = RegExp(srch, gi);
-// VM632:1 Uncaught ReferenceError: gi is not defined
-//     at <anonymous>:1:24
-// (anonymous) @ VM632:1
-// var reg = RegExp(srch, 'gi');
-// undefined
-// reg
-// /mo/gi
-// srch.match(reg);
-// ["mo"]
-
