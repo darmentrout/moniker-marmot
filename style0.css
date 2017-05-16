@@ -28,3 +28,14 @@ form * {
 #result {
 	margin: 2em;
 }
+
+#theResults0 li,
+#theResults1 li {
+	text-transform: capitalize;
+	list-style: none;
+}
+
+#theResults0 li u,
+#theResults1 li u {
+	/*text-transform: initial;*/
+}

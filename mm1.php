@@ -31,7 +31,7 @@ if( isset($get['animal']) ){
 			echo json_encode( $results );
 		}
 		else {
-			echo "No matches. ";
+			echo '[{"animal":"No Matches."}]';
 		}
 	}
 	catch(Exception $e) {
@@ -61,7 +61,7 @@ if( isset($get['find_match']) ){
 			echo json_encode( $results );
 		}
 		else {
-			echo "No matches. ";
+			echo '[{"animal":"No Matches."}]';
 		}
 	}
 	catch(Exception $e) {
