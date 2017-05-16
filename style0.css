@@ -5,6 +5,9 @@ body {
 	margin: 50px;
 	background: #222;
 	color: #fff;
+	height: 100%;
+	margin: 0;
+	padding: 0;
 }
 
 code {
@@ -38,4 +41,53 @@ form * {
 #theResults0 li u,
 #theResults1 li u {
 	/*text-transform: initial;*/
+}
+
+.container {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1200px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+
+/* ---------- HEADER ------------------------- */
+
+header {
+	display: flex;
+	align-items: center;
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+header h1 {
+	padding-left: 30px;
+	margin: 0;
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 3.5em;
+}
+
+header img {
+	object-fit: cover;
+	border-radius: 50%;
+}
+
+
+/* ---------- MAIN --------------------------- */
+
+main {
+
+}
+
+
+
+
+
+@media (max-width: 606px){
+	header h1 {
+		padding-left: 0px;
+		padding-right: 20px;
+	}
 }
