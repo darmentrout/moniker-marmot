@@ -11,31 +11,43 @@
 
 
 	<header class="container">
-		<img src="amos-groundhog.png" width="100" height="100">
+		<img src="amos-groundhog.png" width="125" height="125">
 		<h1>Moniker Marmot</h1>
 	</header>
 
-	<main class="container">
-		<form id="form0" action="#" method="GET">
-			<label for="animal">Search Animals:</label>
-			<input id="animal" name="animal" type="text">
-			<input id="submit0" type="submit">
-		</form>
-		<div><ul id="theResults0"></ul></div>
 
-		<form id="form1" action="#" method="GET">
-			<label for="find_match">Find Matching Animal for:</label>
-			<input id="find_match" name="find_match" type="text" value="feasible">
-			<label for="find_match_places">Places from Start:</label>
-			<select id="find_match_places" name="find_match_places">
-				<option value="1">One</option>
-				<option value="2" selected>Two</option>
-				<option value="3">Three</option>
-			</select>
-			<input id="submit1" type="submit">
-		</form>
-		<div><ul id="theResults1"></ul></div>
+
+	<main class="container">
+
+		<div>
+			<h2>Find Matching Animal</h2>
+			<form id="form1" action="#" method="GET">
+				<label for="find_match">Enter Descriptor</label>
+				<input id="find_match" name="find_match" type="text" placeholder="Moniker">
+				<label for="find_match_places">Places from Start:</label>
+				<select id="find_match_places" name="find_match_places">
+					<option value="1">One</option>
+					<option value="2" selected>Two</option>
+					<option value="3">Three</option>
+				</select>
+				<input id="submit1" type="submit">
+			</form>
+			<div id="theResults1" class="results"></div>
+		</div>
+
+		<div>
+			<h2>Search Animals</h2>
+			<form id="form0" action="#" method="GET">
+				<label for="animal">Species Name:</label>
+				<input id="animal" name="animal" type="text" placeholder="Marmot">
+				<input id="submit0" type="submit">
+			</form>
+			<div id="theResults0" class="results"></div>
+		</div>
+
 	</main>
+
+
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="script0.js"></script>

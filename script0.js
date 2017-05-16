@@ -7,11 +7,11 @@ $('#submit0').on('click keydown', function(e){
 		$('#theResults0').html("");
 		for(i=0;i<animals.length;i++){
 			if ( animals[i].animal === 'No Matches.' ) {
-				$('#theResults0').append("<li>" + animals[i].animal + "</li>");
+				$('#theResults0').append("<p>" + animals[i].animal + "</p>");
 				break;
 			}
 			else {
-				$('#theResults0').append("<li>" + animals[i].epithet + " <span class='species'>" + animals[i].animal + "</span></li>");
+				$('#theResults0').append("<p>" + animals[i].epithet + " <span class='species'>" + animals[i].animal + "</span></p>");
 			}
 		} // end for loop
 		var srch = $('#animal').val();
@@ -20,6 +20,7 @@ $('#submit0').on('click keydown', function(e){
 			var txt = $(this).text();
 			$(this).html( txt.replace(reg, '<u>'+srch+'</u>') );
 		});		
+		$('#theResults0').slideDown();
 	});
 });
 
@@ -33,13 +34,14 @@ $('#submit1').on('click keydown', function(e){
 		$('#theResults1').html("");
 		for(i=0;i<animals.length;i++){
 			if ( animals[i].animal === 'No Matches.' ) {
-				$('#theResults1').append("<li>" + animals[i].animal + "</li>");
+				$('#theResults1').append("<p>" + animals[i].animal + "</p>");
 				break;
 			}
 			else {
-				$('#theResults1').append("<li>" + epithet + " " + animals[i].animal + "</li>");
+				$('#theResults1').append("<p>" + epithet + " " + animals[i].animal + "</p>");
 			}
 		}
+		$('#theResults1').slideDown();
 	});
 });
 
