@@ -79,7 +79,7 @@ main {
     letter-spacing: 1px;
 }
 
-main div {
+main>div {
 	max-width: 45%;
 }
 
