@@ -21,7 +21,9 @@ if( isset($get['animal']) ){
 
 		$query = "SELECT epithet, animal 
 				  FROM names 
-				  WHERE animal LIKE '%' || ? || '%' ";
+				  WHERE animal 
+				  LIKE '%' || ? || '%' 
+				  ORDER BY animal";
 		$things = $db->prepare( $query );
 		$things->bindParam( 1, $get['animal'] );
 		$things->execute();
@@ -51,7 +53,9 @@ if( isset($get['find_match']) ){
 
 		$query = "SELECT animal 
 		  		  FROM names 
-		  		  WHERE animal LIKE ? || '%' ";
+		  		  WHERE animal 
+		  		  LIKE ? || '%' 
+		  		  ORDER BY animal";
 		$things = $db->prepare( $query );
 		$things->bindParam( 1, $fmatch );
 		$things->execute();
