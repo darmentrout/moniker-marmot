@@ -52,3 +52,6 @@ $('#submit1').on('click keydown', function(e){
 });
 
 
+// this could probably be more DRY but who cares
+// the point of this project was to learn SQL/PHP
+// not to be the most efficient JS function writer
