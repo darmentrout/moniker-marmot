@@ -28,21 +28,27 @@ $('#submit0').on('click keydown', function(e){
 // match animals to the search term
 $('#submit1').on('click keydown', function(e){
 	e.preventDefault();
-	$.get('mm.php', $('#form1').serialize(), function(data){
-		var epithet = $('#find_match').val();
-		animals = $.parseJSON(data);
-		$('#theResults1').html("");
-		for(i=0;i<animals.length;i++){
-			if ( animals[i].animal === 'No Matches.' ) {
-				$('#theResults1').append("<p>" + animals[i].animal + "</p>");
-				break;
+	var epithet = $('#find_match').val();
+	if (epithet.length < 1){
+		$('#matchError').slideDown();
+	}
+	else {
+		$('#matchError').slideUp();
+		$.get('mm.php', $('#form1').serialize(), function(data){
+			animals = $.parseJSON(data);
+			$('#theResults1').html("");
+			for(i=0;i<animals.length;i++){
+				if ( animals[i].animal === 'No Matches.' ) {
+					$('#theResults1').append("<p>" + animals[i].animal + "</p>");
+					break;
+				}
+				else {
+					$('#theResults1').append("<p>" + epithet + " " + animals[i].animal + "</p>");
+				}
 			}
-			else {
-				$('#theResults1').append("<p>" + epithet + " " + animals[i].animal + "</p>");
-			}
-		}
-		$('#theResults1').slideDown();
-	});
+			$('#theResults1').slideDown();
+		});
+	}
 });
 
 

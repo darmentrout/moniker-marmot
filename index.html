@@ -23,10 +23,11 @@
 	<main class="container">
 
 		<div>
-			<h2>Find Matching Animal</h2>
-			<form id="form1" action="#" method="GET">
+			<h2 id="heading1">Find Matching Animal</h2>
+			<form id="form1" action="#" method="GET" aria-labelledby="heading1">
 				<small>Enter a word that describes your product. Then choose the search depth.</small>
 				<label for="find_match">Descriptor</label>
+				<small id="matchError" aria-live="assertive">You forgot to include a descriptor!</small>
 				<input id="find_match" name="find_match" type="text" placeholder="Moniker">
 				<label for="find_match_places">Places from Start:</label>
 				<select id="find_match_places" name="find_match_places">
@@ -36,18 +37,18 @@
 				</select>
 				<input id="submit1" type="submit">
 			</form>
-			<div id="theResults1" class="results"></div>
+			<div id="theResults1" class="results" aria-live="polite" aria-relevant="all"></div>
 		</div>
 
 		<div>
-			<h2>Search Animals</h2>
-			<form id="form0" action="#" method="GET">
+			<h2 id="heading0">Search Animals</h2>
+			<form id="form0" action="#" method="GET" aria-labelledby="heading0">
 				<small>Enter an animal name to see an example. A blank search returns the entire list.</small>
 				<label for="animal">Species Name:</label>
 				<input id="animal" name="animal" type="text" placeholder="Marmot">
 				<input id="submit0" type="submit">
 			</form>
-			<div id="theResults0" class="results"></div>
+			<div id="theResults0" class="results" aria-live="polite" aria-relevant="all"></div>
 		</div>
 
 	</main>
