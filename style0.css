@@ -20,7 +20,7 @@ body {
 
 .container {
 	margin: 0 auto;
-	max-width: 1200px;
+	max-width: 1000px;
 	padding-left: 20px;
 	padding-right: 20px;
 }
@@ -63,7 +63,7 @@ aside {
 }
 
 aside p {
-	max-width: 700px;
+	/*max-width: 700px;*/
 	font-size: .9em;
 	line-height: 1.3em;
     margin-top: 10px;
@@ -77,6 +77,10 @@ main {
     display: flex;
     justify-content: space-around;
     letter-spacing: 1px;
+}
+
+main div {
+	max-width: 45%;
 }
 
 main h2 {
@@ -130,6 +134,8 @@ small {
 
 
 @media (max-width: 770px){
+	/* DISCLAIMER: setting max-width is admittedly backward and not 
+	necessarily the textbook "mobile first" way to do things. */
 	header h1 {
 		display: block;
 		padding: 0;
@@ -141,6 +147,9 @@ small {
 	main h2,
 	small {
 		text-align: center;
+	}
+	main div {
+		max-width: 100%;
 	}
 	main div:nth-child(2) {
 		margin-top: 40px;
