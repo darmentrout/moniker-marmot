@@ -1,5 +1,7 @@
 <?php
+
 	require "../CAS-1.3.4/login.php";
+
 ?>
 
 <!DOCTYPE html>
